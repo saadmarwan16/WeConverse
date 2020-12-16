@@ -1,26 +1,39 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% block heading %}
+    Home
+{% endblock %}
 
-        <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
+{% block main %}
+    <div class="topbar">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search your friends list" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+             </form>
+        </nav>
 
-        <link href="{{ url_for('static', filename='images/favicon.ico') }}" rel="icon"> -->
+        <div class="dropdown-btn">
+            <button class="initial">{{ initial }}</button>
 
-        <title>Login - WeConverse</title>
+            <ul class="dropdown-list">
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('friends') }}">Friends</a></li>
+                <li><a href="{{ url_for('settings') }}">Settings</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </div>
+    </div>
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 menu">
 
-        <link type="text/css" href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet">
-    </head>
+            </div>
 
-    <body>
-        Hello, world!
-    </body>
-</html>
+            <div class="col-12 col-sm-9 chat-section">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
